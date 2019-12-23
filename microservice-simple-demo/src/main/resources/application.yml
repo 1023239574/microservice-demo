@@ -8,14 +8,24 @@ spring:
     url: ${spring.datasource.url}
     username: ${spring.datasource.username}
     password: ${spring.datasource.password}
+  kafka:
+    # 指定kafka 代理地址，可以多个
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      retries: 0
+      # 每次批量发送消息的数量
+      batch-size: 16384
+      buffer-memory: 33554432
+      # 指定消息key和消息体的编解码方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 eureka:
-  client:
-    service-url:
-      defaultZone: ${eureka.client.service-url.defaultZone}
-    fetch-registry: true
   instance:
     prefer-ip-address: true
-    instance-id: consumer:${server.port}
+    instance-id: consumer:${server.demo_port}
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔
@@ -41,6 +51,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
 
 feign:
   client:

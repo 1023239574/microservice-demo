@@ -18,13 +18,9 @@ spring:
       enable-auto-commit: true
       auto-commit-interval: 100
       # 指定消息key和消息体的编解码方式
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 eureka:
-  client:
-    fetch-registry: true
-    service-url:
-     defaultZone: ${eureka.client.service-url.defaultZone}
   instance:
     #访问路径可以显示ip地址
     prefer-ip-address: true
