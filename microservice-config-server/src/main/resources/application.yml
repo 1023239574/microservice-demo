@@ -11,7 +11,8 @@ spring:
           username: 1023239574@qq.com
           password: ly52499698
           clone-on-start: true
-logging:
-  level:
-    org.springframework.cloud: debug
-    org.springframework.boot: debug
+
+#logging:
+#  level:
+#    org.springframework.cloud: debug
+#    org.springframework.boot: debug

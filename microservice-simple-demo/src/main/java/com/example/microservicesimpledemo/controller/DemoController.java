@@ -5,6 +5,8 @@ import com.example.microservicesimpleapi.service.IUserService;
 import com.example.microservicesimpleapi.bean.JsonResult;
 import com.example.microservicesimpleapi.bean.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -34,4 +36,5 @@ public class DemoController {
         User user=userService.getUserByUserName(username);
         return JsonResult.SUCCESS(user);
     }
+
 }

@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    stream:
+      binder:
+        brokers: localhost:9092
+        defaultBrokerPort: 9092
+        zkNodes: localhost:2181
+        defaultZkPort: 2181

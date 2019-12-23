@@ -63,3 +63,10 @@ ribbon:
 logging:
   logging:
     config: classpath:logback-spring.xml
+
+# 暴露端点 *表示暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

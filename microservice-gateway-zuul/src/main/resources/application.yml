@@ -1,5 +1,5 @@
 server:
-  port: 8040
+  port: ${server.zuul_port}
 
 spring:
   application:
@@ -12,7 +12,7 @@ eureka:
       defaultZone: http://user:123@localhost:8761/eureka/
   instance:
     prefer-ip-address: true
-    instance-id:  gateway-Zuul:${server.port}
+    instance-id:  gateway-Zuul:${server.zuul_port}
 
 zuul:
  # strip-prefix: false

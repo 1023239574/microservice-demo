@@ -79,3 +79,10 @@ ribbon:
 logging:
   level:
     com.example.microservicesimpleapi.service.IUserService: debug
+
+# 暴露端点 *表示暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
