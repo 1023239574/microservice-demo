@@ -1,13 +1,13 @@
 server:
-  port: 8082
+  port: ${server.provider2_port}
 spring:
   application:
     name: microservice-simple-provider
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user?useSSL=false&useUnicode=true&characterEncoding=utf-8&userSSL=false&serverTimezone=CTT&allowMultiQueries=true&allowPublicKeyRetrieval=true
-    username: root
-    password:
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
   kafka:
     # 指定kafka 代理地址，可以多个
     bootstrap-servers: localhost:9092
@@ -24,12 +24,12 @@ eureka:
   client:
     fetch-registry: true
     service-url:
-     defaultZone: http://user:123@localhost:8761/eureka/
+     defaultZone: ${eureka.client.service-url.defaultZone}
   instance:
     #访问路径可以显示ip地址
     prefer-ip-address: true
     #自定义服务名称信息
-    instance-id: provider-2:${server.port}
+    instance-id: provider-2:${server.provider2_port}
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔

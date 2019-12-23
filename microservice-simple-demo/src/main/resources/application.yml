@@ -1,21 +1,21 @@
 server:
-  port: 8081
+  port: ${server.demo_port}
 spring:
   application:
     name: microservice-simple-demo
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user?useSSL=false&useUnicode=true&characterEncoding=utf-8&userSSL=false&serverTimezone=CTT&allowMultiQueries=true&allowPublicKeyRetrieval=true
-    username: root
-    password:
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
 eureka:
   client:
     service-url:
-      defaultZone: http://user:123@localhost:8761/eureka/
+      defaultZone: ${eureka.client.service-url.defaultZone}
     fetch-registry: true
   instance:
     prefer-ip-address: true
-    instance-id: consumer:8081
+    instance-id: consumer:${server.port}
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔
