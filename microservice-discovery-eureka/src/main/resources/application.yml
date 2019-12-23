@@ -1,0 +1,21 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    #    表示是否将自己注册到Eureka Server
+    register-with-eureka: false
+    #    表示是否从Eureka Server 获取注册信息
+    fetch-registry: false
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #    关闭注册中心自我保护机制
+    enable-self-preservation: false
+#  开启安全验证
+spring:
+  security:
+      user:
+        name: user
+        password: 123

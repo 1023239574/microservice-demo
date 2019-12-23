@@ -1,0 +1,44 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: microservice-gateway-Zuul
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://user:123@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id:  gateway-Zuul:${server.port}
+
+zuul:
+ # strip-prefix: false
+  routes:
+    demo-route:
+      service-id: microservice-simple-demo
+      path: /consumer/**
+    provider1-route:
+      service-id: microservice-simple-provider
+      path: /provider1/**
+    provider2-route:
+      service-id: microservice-simple-provider
+      path: /provider2/**
+  ribbon:
+    eager-load:
+      enabled: true
+  retryable: true
+
+# 暴露端点 *表示暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+logging:
+  level:
+    com.netflix: debug
