@@ -11,9 +11,6 @@ spring:
   kafka:
     # 指定kafka 代理地址，可以多个
     bootstrap-servers: localhost:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
     consumer:
       # 指定默认消费者group id
       group-id: test-group
