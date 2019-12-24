@@ -9,6 +9,10 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id:  gateway-Zuul:${server.zuul_port}
+  client:
+    # 开启健康检查
+    healthcheck:
+      enabled: true
 
 zuul:
  # strip-prefix: false

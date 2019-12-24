@@ -8,6 +8,24 @@ spring:
     url: ${spring.datasource.url}
     username: ${spring.datasource.username}
     password: ${spring.datasource.password}
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 10
+      max-active: 10
+      min-idle: 10
+      max-wait: 60000
+      test-on-borrow: true
+      test-while-idle: true
+      validation-query: select 1
+      time-between-eviction-runs-millis: 60000
+      validation-query-timeout: 10000
+      min-evictable-idle-time-millis: 300000
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      use-global-data-source-stat: true
+      filters: stat,wall
   kafka:
     # 指定kafka 代理地址，可以多个
     bootstrap-servers: localhost:9092
@@ -26,6 +44,10 @@ eureka:
     prefer-ip-address: true
     #自定义服务名称信息
     instance-id: provider-2:${server.provider2_port}
+  client:
+    # 开启健康检查
+    healthcheck:
+      enabled: true
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔
@@ -66,3 +88,8 @@ management:
     web:
       exposure:
         include: "*"
+
+# druid连接池监控页面登录用户名密码
+druid:
+  username: ${druid.username}
+  password: ${druid.password}

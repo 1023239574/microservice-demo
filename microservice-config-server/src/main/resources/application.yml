@@ -18,6 +18,9 @@ spring:
       password: 123
 eureka:
   client:
+    # 开启健康检查
+    healthcheck:
+      enabled: true
     service-url:
       defaultZone: http://user:123@localhost:8761/eureka/
     fetch-registry: true
