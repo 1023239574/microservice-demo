@@ -2,6 +2,7 @@ spring:
   cloud:
     config:
       discovery:
+        # 表示开启通过发现组件访问Config Server的功能
         enabled: true
         service-id: MICROSERVICE-CONFIG-SERVER
       # profile指定对应config server所获取的配置文件中的{profile}
@@ -10,18 +11,8 @@ spring:
       label: master
       # 对应config server所获取的配置文件的{application}
       name: microservice-simple-demo
-  kafka:
-    # 指定kafka 代理地址，可以多个
-    bootstrap-servers: 127.0.0.1:9092
-    consumer:
-      # 指定默认消费者group id
-      group-id: test-group
-      auto-offset-reset: earliest
-      enable-auto-commit: true
-      auto-commit-interval: 100
-      # 指定消息key和消息体的编解码方式
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      username: user
+      password: 123
 eureka:
   client:
     service-url:

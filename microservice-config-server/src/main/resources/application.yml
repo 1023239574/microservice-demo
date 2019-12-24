@@ -11,6 +11,11 @@ spring:
           username: 1023239574@qq.com
           password: ly52499698
           clone-on-start: true
+#  开启安全验证
+  security:
+    user:
+      name: user
+      password: 123
 eureka:
   client:
     service-url:
@@ -19,6 +24,8 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: configserver:${server.port}
+
+
 
 
 #logging:

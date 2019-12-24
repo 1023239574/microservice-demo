@@ -6,10 +6,6 @@ spring:
     name: microservice-gateway-Zuul
 
 eureka:
-  client:
-    fetch-registry: true
-    service-url:
-      defaultZone: http://user:123@localhost:8761/eureka/
   instance:
     prefer-ip-address: true
     instance-id:  gateway-Zuul:${server.zuul_port}

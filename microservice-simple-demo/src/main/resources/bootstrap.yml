@@ -2,6 +2,7 @@ spring:
   cloud:
     config:
       discovery:
+        # 表示开启通过发现组件访问Config Server的功能
         enabled: true
         service-id: MICROSERVICE-CONFIG-SERVER
       # profile指定对应config server所获取的配置文件中的{profile}
@@ -10,6 +11,8 @@ spring:
       label: master
       # 对应config server所获取的配置文件的{application}
       name: microservice-simple-demo
+      username: user
+      password: 123
 eureka:
   client:
     service-url:
