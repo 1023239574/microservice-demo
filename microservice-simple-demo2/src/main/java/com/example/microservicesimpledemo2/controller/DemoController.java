@@ -1,9 +1,9 @@
-package com.example.microservicesimpledemo.controller;
+package com.example.microservicesimpledemo2.controller;
 
-import com.example.microservicesimpleapi.bean.requset.LoginParams;
-import com.example.microservicesimpleapi.service.IUserService;
 import com.example.microservicesimpleapi.bean.JsonResult;
 import com.example.microservicesimpleapi.bean.entity.User;
+import com.example.microservicesimpleapi.bean.requset.LoginParams;
+import com.example.microservicesimpleapi.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

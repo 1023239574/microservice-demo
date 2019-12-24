@@ -24,6 +24,7 @@
         <module>microservice-simple-provider2</module>
         <module>microservice-simple-common</module>
         <module>microservice-simple-demo</module>
+        <module>microservice-simple-demo2</module>
         <module>microservice-simple-api</module>
         <module>microservice-gateway-zuul</module>
         <module>microservice-config-server</module>

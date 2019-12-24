@@ -42,3 +42,20 @@ management:
 logging:
   level:
     com.netflix: debug
+
+#hystrix超时时间配置,默认1s
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
