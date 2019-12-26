@@ -1,5 +1,5 @@
 FROM java:8
-ADD microservice-simple-provider provider.jar
+ADD microservice-simple-provider.jar provider.jar
 RUN echo "Asia/shanghai" > /etc/timezone;
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;
 EXPOSE 8081
