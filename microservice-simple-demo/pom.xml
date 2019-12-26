@@ -43,6 +43,7 @@
     </dependencies>
 
     <build>
+        <finalName>microservice-simple-demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
