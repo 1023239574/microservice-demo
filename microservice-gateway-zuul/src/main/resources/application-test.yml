@@ -1,0 +1,5 @@
+server:
+  port: ${server.zuul_port}
+eureka:
+  instance:
+    instance-id:  gateway-Zuul:${server.zuul_port}

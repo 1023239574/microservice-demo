@@ -1,13 +1,11 @@
-server:
-  port: ${server.provider_port}
+
 spring:
+  profiles:
+    active: @profiles.active@,common,common-@profiles.active@
   application:
     name: microservice-simple-provider
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 10
@@ -27,8 +25,6 @@ spring:
       use-global-data-source-stat: true
       filters: stat,wall
   kafka:
-    # 指定kafka 代理地址，可以多个
-    bootstrap-servers: localhost:9092
     consumer:
       # 指定默认消费者group id
       group-id: test-group
@@ -42,7 +38,6 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id:  provider-1:${server.provider_port}
   client:
     # 开启健康检查
     healthcheck:
@@ -87,7 +82,3 @@ management:
     web:
       exposure:
         include: "*"
-
-druid:
-  username: ${druid.username}
-  password: ${druid.password}

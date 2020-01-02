@@ -15,5 +15,4 @@ public class KafkaReceiver {
         Optional<?> kafkaMessage=Optional.ofNullable(record.value());
         kafkaMessage.ifPresent(m -> log.info("kafka接收信息---------->"+m));
     }
-
 }

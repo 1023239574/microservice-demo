@@ -1,13 +1,10 @@
-server:
-  port: ${server.demo_port}
 spring:
+  profiles:
+    active: @profiles.active@,common,common-@profiles.active@
   application:
     name: microservice-simple-demo
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 10
@@ -27,8 +24,6 @@ spring:
       use-global-data-source-stat: true
       filters: stat,wall
   kafka:
-    # 指定kafka 代理地址，可以多个
-    bootstrap-servers: 127.0.0.1:9092
     producer:
       retries: 0
       # 每次批量发送消息的数量
@@ -43,7 +38,6 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id: consumer:${server.demo_port}
   client:
     # 开启健康检查
     healthcheck:
@@ -120,7 +114,3 @@ management:
       exposure:
         include: "*"
 
-# druid连接池监控页面登录用户名密码
-druid:
-  username: ${druid.username}
-  password: ${druid.password}

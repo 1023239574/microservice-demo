@@ -1,0 +1,19 @@
+server:
+  port: ${server.provider_port}
+
+spring:
+  datasource:
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  kafka:
+    # 指定kafka 代理地址，可以多个
+    bootstrap-servers: 192.168.244.129:9092
+
+eureka:
+  instance:
+    instance-id: provider-1:${server.provider_port}
+
+druid:
+  username: ${druid.username}
+  password: ${druid.password}
