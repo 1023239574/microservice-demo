@@ -1,11 +1,11 @@
 spring:
   redis:
     # Redis服务器地址
-    host: 127.0.0.1
+    host: ${spring.redis.host}
     # Redis服务器连接端口
-    port: 6379
+    port: ${spring.redis.port}
     # Redis服务器连接密码（默认为空）
-    password:
+    password: ${spring.redis.password}
   kafka:
     # 指定kafka 代理地址，可以多个
     bootstrap-servers: 127.0.0.1:9092
