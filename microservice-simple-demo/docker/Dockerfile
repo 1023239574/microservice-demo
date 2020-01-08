@@ -1,6 +1,6 @@
 FROM java:8
-ADD microservice-simple-provider.jar provider.jar
+ADD ../microservice-simple-demo/target/microservice-simple-demo.jar demo.jar
 RUN echo "Asia/shanghai" > /etc/timezone;
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","/provider.jar"]
+ENTRYPOINT ["java","-jar","/demo.jar"]

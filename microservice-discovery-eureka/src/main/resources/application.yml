@@ -10,8 +10,8 @@ eureka:
 #  开启安全验证
 spring:
   security:
-      user:
-        name: user
-        password: 123
+    user:
+      name: user
+      password: 123
   profiles:
     active: @profiles.active@

@@ -1,5 +1,5 @@
 FROM java:8
-ADD microservice-discovery-eureka.jar Eureka.jar
+ADD ../microservice-discovery-eureka/target/microservice-discovery-eureka.jar Eureka.jar
 RUN echo "Asia/shanghai" > /etc/timezone;
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;
 EXPOSE 8761
