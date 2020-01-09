@@ -92,8 +92,8 @@ hystrix:
 ribbon:
   eureka:
     enabled: true
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
   eager-load:
     enabled: true
   #同一实例最大重试次数，不包括首次调用
