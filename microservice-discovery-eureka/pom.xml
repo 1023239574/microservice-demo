@@ -35,13 +35,13 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.0</version>
-                <dependencies>
+<!--                <dependencies>
                     <dependency>
                         <groupId>javax.activation</groupId>
                         <artifactId>activation</artifactId>
                         <version>1.1.1</version>
                     </dependency>
-                </dependencies>
+                </dependencies>-->
                 <executions>
                     <execution>
                         <id>default</id>
@@ -56,9 +56,9 @@
 <!--                    <tag>${project.version}</tag>
                     <username>username</username>
                     <password>password</password>-->
-                    <buildArgs>
+<!--                    <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
+                    </buildArgs>-->
                 </configuration>
             </plugin>
 

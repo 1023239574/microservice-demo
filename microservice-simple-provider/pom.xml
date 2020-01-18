@@ -73,9 +73,9 @@
                     <!--                    <tag>${project.version}</tag>
                                         <username>username</username>
                                         <password>password</password>-->
-                    <buildArgs>
+<!--                    <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
+                    </buildArgs>-->
                 </configuration>
             </plugin>
             <plugin>
