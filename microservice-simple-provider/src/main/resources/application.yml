@@ -1,4 +1,3 @@
-
 spring:
   profiles:
     active: @profiles.active@,common,common-@profiles.active@
