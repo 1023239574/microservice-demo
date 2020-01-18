@@ -53,7 +53,9 @@
                 </executions>
                 <configuration>
                     <repository>${docker.registry.name.prefix}/${project.build.finalName}</repository>
-                    <tag>${project.version}</tag>
+<!--                    <tag>${project.version}</tag>
+                    <username>username</username>
+                    <password>password</password>-->
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>

@@ -15,6 +15,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <docker.registry.name.prefix>microservice</docker.registry.name.prefix>
     </properties>
 
     <dependencies>
@@ -52,6 +53,36 @@
     <build>
         <finalName>microservice-gateway-zuul</finalName>
         <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                        <version>1.1.1</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>${docker.registry.name.prefix}/${project.build.finalName}</repository>
+                    <!--                    <tag>${project.version}</tag>
+                                        <username>username</username>
+                                        <password>password</password>-->
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
