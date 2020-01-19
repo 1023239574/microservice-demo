@@ -6,4 +6,4 @@ eureka:
       defaultZone: http://user:123@192.168.244.129:8761/eureka/
   instance:
     instance-id: config-server:${server.port}
-    #ip-address: 192.168.244.129
+    ip-address: 192.168.244.129
