@@ -3,3 +3,4 @@ server:
 eureka:
   instance:
     instance-id:  gateway-Zuul:${server.zuul_port}
+    ip-address: 192.168.244.129

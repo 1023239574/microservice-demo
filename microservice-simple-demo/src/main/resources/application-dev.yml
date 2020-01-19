@@ -12,6 +12,7 @@ spring:
 eureka:
   instance:
     instance-id: consumer:${server.demo_port}
+    ip-address: 192.168.244.129
 
 # druid连接池监控页面登录用户名密码
 druid:
